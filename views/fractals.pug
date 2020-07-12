@@ -1,0 +1,25 @@
+html(lang='en')
+head
+    title='Fractals'
+    link(rel='stylesheet', href='/stylesheets/style.css')
+
+body
+    form(action='fractals', method='POST')
+        input(type='text', name='iterations', value='0')
+        input(type='submit', name='type', value='dragon')
+        input(type='submit', name='type', value='gosper')
+        input(type='submit', name='type', value='koch')
+
+    //create a canvas
+    canvas(id='canvas')
+
+    // draw provided fractal string on canvas
+    script.
+        var type = "!{type}"
+        var fractal = "!{fractal}"
+        var angle = "!{angle}"
+    script(src='javascripts/drawFractal.js')
+
+    //- //fullscreens the canvas and resizes it when window is resized
+    //- <script src="javascripts/fractalCanvas.js" type="text/javascript"></script>
+</body>
