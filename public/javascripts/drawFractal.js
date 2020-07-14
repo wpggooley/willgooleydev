@@ -1,12 +1,3 @@
-  
-    // clears the canvas and then iterates and then draws the new fractal
-    // redraw = () => {
-    //     resizeCanvas()
-    //     this.reset()
-    //     console.log(document.getElementById("iterations").value)
-    //     this.draw()
-    //   }
-
 draw = () => {
     var canvas = document.getElementById("canvas");
 
@@ -28,8 +19,10 @@ draw = () => {
             current = {x: 0, y: canvas.height - 5};
             break;
         default:
+            current = {x: 0, y: 0}
             break;
     }
+    
     var hold;
     ctx.moveTo(current.x, current.y);
     for (i = 0; i < fractal.length; i++){
